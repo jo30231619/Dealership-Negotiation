@@ -17,10 +17,19 @@ public class Car {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long carId;
 	
+	@EqualsAndHashCode.Exclude
 	private String make;
+	
+	@EqualsAndHashCode.Exclude
 	private String model;
+	
+	@EqualsAndHashCode.Exclude
 	private String carYear;
+	
+	@EqualsAndHashCode.Exclude
 	private String vin;
+	
+	@EqualsAndHashCode.Exclude
 	private String mileage;
 	
 	@EqualsAndHashCode.Exclude

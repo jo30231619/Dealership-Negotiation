@@ -1,0 +1,7 @@
+package dealership.negotiation.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public class DealershipDao implements JpaRepository<Dealership, Long> {
+
+}

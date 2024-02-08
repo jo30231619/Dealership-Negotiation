@@ -3,6 +3,7 @@ package dealership.negotiation.entity;
 import java.util.HashSet;
 import java.util.Set;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,7 +18,7 @@ import lombok.ToString;
 public class Automaker {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long automakerId;
+	private Long automakerId;
 	
 	private String name;
 	private String city;
@@ -25,6 +26,6 @@ public class Automaker {
 	
 	@EqualsAndHashCode.Exclude
 	@ToString.Exclude
-	@ManyToMany(mappedBy = "automakers")
+	@ManyToMany(mappedBy = "automakers", cascade = CascadeType.PERSIST)
 	private Set<Dealership> dealerships = new HashSet<>();
 }

@@ -1,0 +1,10 @@
+1707088187274	Extract constant 'DEALERSHIP_TABLE'
+1707088303378	Copy file
+1707088327996	Rename resource 'application.yaml'
+1707098707786	Copy file
+1707151561075	Rename type 'carDao'
+1707159596684	Delete element
+1707174402319	Rename method 'deleteAutomaker'
+1707174422038	Rename method 'deleteCar'
+1707174442241	Rename method 'deleteDealership'
+1707181419615	Copy file

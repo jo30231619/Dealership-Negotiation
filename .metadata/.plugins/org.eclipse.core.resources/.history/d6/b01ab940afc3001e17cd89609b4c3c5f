@@ -1,0 +1,25 @@
+package dealership.negotiation.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import dealership.negotiation.controller.model.DealershipData;
+
+public class NegotiationServiceTestSupport {
+	
+	// @formatter:off
+	private DealershipData addDealership1 = new DealershipData(
+			
+			); 
+	// @formatter:on
+	
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
+	
+	@Autowired
+	private NegotiationController negotiationController;
+	
+	protected DealershipData buildAddDealership(int which) {
+		return which == 1 ? addDealership1 : addDealership2;
+	}
+}

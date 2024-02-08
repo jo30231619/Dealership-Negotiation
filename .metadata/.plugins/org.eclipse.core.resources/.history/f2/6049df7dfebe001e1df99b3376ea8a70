@@ -1,0 +1,10 @@
+CREATE TABLE dealership (
+	dealership_id int NOT NULL AUTO_INCREMENT,
+	dealership_name varchar(256) NOT NULL,
+	street_address varchar(128) NOT NULL,
+	city varchar(60),
+	state varchar(40),
+	zip varchar(20),
+	phone varchar(30),
+	PRIMARY KEY (dealership_id)
+);

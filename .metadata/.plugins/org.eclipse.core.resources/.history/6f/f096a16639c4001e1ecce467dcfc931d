@@ -1,0 +1,59 @@
+package dealership.negotiation.controller;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
+
+import dealership.negotiation.controller.model.DealershipData;
+import dealership.negotiation.service.NegotiationService;
+import lombok.extern.slf4j.Slf4j;
+
+@RestController
+@RequestMapping("/dealership_negotiation")
+@Slf4j
+public class NegotiationController {
+	@Autowired
+	private NegotiationService negotiationService;
+	
+	@PostMapping("/dealership")
+	@ResponseStatus(code = HttpStatus.CREATED)
+	public DealershipData createDealership(@RequestBody DealershipData dealershipData) {
+		log.info("Creating dealership {}", dealershipData);
+		return negotiationService.saveDealership(dealershipData);
+	}
+	
+	@PutMapping("/dealership/{dealershipId}")
+	public DealershipData updateDealership(@PathVariable Long dealershipId, @RequestBody DealershipData dealershipData) {
+		dealershipData.setDealershipId(dealershipId);
+		log.info("Updating dealership {}", dealershipData);
+		return negotiationService.saveDealership(dealershipData);
+	}
+	
+	@GetMapping("/dealership/{dealershipId}")
+	public DealershipData retrieveDealership(@PathVariable Long dealershipId) {
+		log.info("Retrieving dealership with ID={}", dealershipId);
+		return negotiationService.retrieveDealershipById(dealershipId);
+	}
+	
+	@GetMapping("/dealership")
+	public List<DealershipData> retrieveAllDealerships() {
+		log.info("Retrieving all dealerships");
+		return negotiationService.retrieveAllDealerships();
+	}
+	
+	@DeleteMapping("/dealership/{dealershipId}")
+	public Map<String, String> deleteDealership(@PathVariable Long dealershipId)
+	
+	
+}

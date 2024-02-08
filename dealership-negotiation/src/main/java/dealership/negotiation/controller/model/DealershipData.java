@@ -72,10 +72,11 @@ public class DealershipData {
 
 		return dealership;
 	}
+	
 
 	@Data
 	@NoArgsConstructor
-	public class CarData {
+	public static class CarData {
 		private Long carId;
 		private String make;
 		private String model;
@@ -108,12 +109,12 @@ public class DealershipData {
 
 	@Data
 	@NoArgsConstructor
-	public class AutomakerData {
-		private long automakerId;
+	public static class AutomakerData {
+		private Long automakerId;
 		private String name;
 		private String city;
 		private String state;
-
+		
 		public AutomakerData(Automaker automaker) {
 			this.automakerId = automaker.getAutomakerId();
 			this.name = automaker.getName();
@@ -134,5 +135,6 @@ public class DealershipData {
 
 	}
 }
+
 
 //toDealership is to convert from object to data object.

@@ -24,33 +24,16 @@ public class Dealership {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long dealershipId;
 	
-	@EqualsAndHashCode.Exclude
-	@ToString.Exclude
 	private String dealershipName;
-	
-	@EqualsAndHashCode.Exclude
-	@ToString.Exclude
 	private String streetAddress;
-	
-	@EqualsAndHashCode.Exclude
-	@ToString.Exclude
 	private String city;
-	
-	@EqualsAndHashCode.Exclude
-	@ToString.Exclude
 	private String state;
-	
-	@EqualsAndHashCode.Exclude
-	@ToString.Exclude
 	private String zip;
-	
-	@EqualsAndHashCode.Exclude
-	@ToString.Exclude
 	private String phone;
 	
 	@EqualsAndHashCode.Exclude
 	@ToString.Exclude
-	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "dealership", cascade = CascadeType.ALL, orphanRemoval = true)
 	private Set<Car> cars = new HashSet<>();
 	
 	@EqualsAndHashCode.Exclude

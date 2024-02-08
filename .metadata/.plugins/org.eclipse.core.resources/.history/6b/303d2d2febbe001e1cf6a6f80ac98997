@@ -1,0 +1,14 @@
+package dealership.negotiation.entity;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Automaker {
+	private long automakerId;
+	
+	private String name;
+	private String city;
+	private String state;
+	
+	private Set<Dealership> dealerships = new HashSet<>();
+}
