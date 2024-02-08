@@ -1,9 +1,0 @@
-package dealership.negotiation.controller;
-
-import dealership.negotiation.controller.model.DealershipData;
-
-public class NegotiationServiceTestSupport {
-	protected DealershipData buildAddDealership(int i) {
-		return null;
-	}
-}

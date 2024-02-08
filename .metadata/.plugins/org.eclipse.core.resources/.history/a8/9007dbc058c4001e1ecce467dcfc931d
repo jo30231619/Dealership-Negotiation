@@ -1,5 +1,0 @@
-package dealership.negotiation.dao;
-
-public interface AutomakerDao {
-
-}
